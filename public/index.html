@@ -2,12 +2,15 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Mini App</title>
+  <title>Отдых в Евпатории</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2 id="user"></h2>
+
+
+  <div class="container">
 
   <script>
     const tg = window.Telegram.WebApp;
@@ -15,7 +18,20 @@
 
     const user = tg.initDataUnsafe?.user;
     document.getElementById("user").innerText =
-      user ? `Привет, ${user.first_name}` : "Привет!";
+      user ? `<h1>Привет, ${user.first_name}` : "Привет!</h1>";
   </script>
+
+  
+
+    <p class="main-text">
+      Давай я расскажу тебе про отдых в Евпатории
+    </p>
+
+    <a class="link-btn" href="map.html">📍 Карта Евпатории</a>
+    <a class="link-btn" href="video.html">🎥 Видео об отдыхе</a>
+  </div>
+
+
+
 </body>
 </html>

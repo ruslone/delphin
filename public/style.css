@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  .main-text {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  
+  .link-btn {
+    display: block;
+    margin-bottom: 12px;
+    padding: 14px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    background: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    font-size: 16px;
+  }
+  
