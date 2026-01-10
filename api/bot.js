@@ -18,7 +18,7 @@ export default async function handler(req, res) {
           keyboard: [[{
             text: "Открыть приложение",
             web_app: {
-              url: "https://delphin-orpin.vercel.app/index.html"
+              url: "https://delphin93.vercel.app/"
             }
           }]],
         resize_keyboard: true
