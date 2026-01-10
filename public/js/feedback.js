@@ -1,7 +1,6 @@
 const tg = window.Telegram?.WebApp;
 const form = document.getElementById("feedbackForm");
 const msg = document.getElementById("feedbackMessage");
-console.log(1);
 if (!tg) {
   // Если не в Telegram — скрываем форму и показываем телефон
   form.style.display = "none";
@@ -9,6 +8,8 @@ if (!tg) {
   msg.innerHTML = `Страница должна открываться через Telegram. <br>
   Позвоните нам по телефону: <a href="tel:+79601234567">+7 (960) 123-45-67</a>`;
 } else {
+  console.log(12);
+
   // Telegram Mini App
   tg.ready();
 
