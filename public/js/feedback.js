@@ -1,16 +1,20 @@
-const tg = window.Telegram?.WebApp;
+const tg = window.Telegram.WebApp;
 const form = document.getElementById("feedbackForm");
 const msg = document.getElementById("feedbackMessage");
-if (!tg) {
-  // Если не в Telegram — скрываем форму и показываем телефон
+
+const isTelegramMiniApp = tg.initData && tg.initData.length > 0;
+
+if (!isTelegramMiniApp) {
+  // ❌ Обычный браузер
   form.style.display = "none";
   msg.style.display = "block";
-  msg.innerHTML = `Страница должна открываться через Telegram. <br>
-  Позвоните нам по телефону: <a href="tel:+79601234567">+7 (960) 123-45-67</a>`;
+  msg.innerHTML = `
+    Эта форма работает только в Telegram.<br><br>
+    📞 Позвоните нам: 
+    <a href="tel:+79601234567">+7 (960) 123-45-67</a>
+  `;
 } else {
-  console.log(12);
-
-  // Telegram Mini App
+  // ✅ Telegram Mini App
   tg.ready();
 
   form.addEventListener("submit", (e) => {
@@ -23,11 +27,12 @@ if (!tg) {
       message: form[2].value.trim()
     };
 
+    // ⬅️ ВАЖНО: отправка данных
     tg.sendData(JSON.stringify(data));
 
-    // Показать сообщение пользователю
+    // UI-ответ пользователю
+    form.style.display = "none";
     msg.style.display = "block";
-    msg.innerText = '✅ Ваше сообщение отправлено. Спасибо!';
-    form.reset();
+    msg.innerText = "✅ Сообщение отправлено. Мы скоро свяжемся с вами!";
   });
 }
