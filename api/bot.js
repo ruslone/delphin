@@ -27,5 +27,22 @@ export default async function handler(req, res) {
     );
   }
 
+  if (update.message?.web_app_data) {
+    const data = JSON.parse(update.message.web_app_data.data);
+  
+    if (data.type === "feedback") {
+      await bot.sendMessage(
+        process.env.ADMIN_CHAT_ID,
+        `📩 Новое сообщение с сайта:
+  
+  👤 Имя: ${data.name}
+  📞 Телефон: ${data.phone}
+  ❓ Вопрос:
+  ${data.message}`
+      );
+    }
+  }
+  
+
   res.status(200).send("OK");
 }
