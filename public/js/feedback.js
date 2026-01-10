@@ -1,23 +1,20 @@
 const tg = window.Telegram?.WebApp;
+const form = document.getElementById("feedbackForm");
+const msg = document.getElementById("feedbackMessage");
 
-// Проверка, открыта ли страница в Telegram Mini App
-const inTelegram = !!tg;
-
-// Если не в Telegram, показываем телефон администратора
-if (!inTelegram) {
-  const msg = document.getElementById('feedbackMessage');
-  msg.style.display = 'block';
-  msg.innerHTML = `Страница не открыта в Telegram. Пожалуйста, позвоните нам по телефону: <a href="tel:+79601234567">+7 (960) 123-45-67</a>`;
-}
-
-// Логика отправки формы внутри Telegram
-if (inTelegram) {
+if (!tg) {
+  // Если не в Telegram — скрываем форму и показываем телефон
+  form.style.display = "none";
+  msg.style.display = "block";
+  msg.innerHTML = `Страница должна открываться через Telegram. <br>
+  Позвоните нам по телефону: <a href="tel:+79601234567">+7 (960) 123-45-67</a>`;
+} else {
+  // Telegram Mini App
   tg.ready();
 
-  document.getElementById("feedbackForm").addEventListener("submit", (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const form = e.target;
     const data = {
       type: "feedback",
       name: form[0].value.trim(),
@@ -27,12 +24,9 @@ if (inTelegram) {
 
     tg.sendData(JSON.stringify(data));
 
-    // Показываем сообщение пользователю
-    const msg = document.getElementById('feedbackMessage');
-    msg.style.display = 'block';
+    // Показать сообщение пользователю
+    msg.style.display = "block";
     msg.innerText = '✅ Ваше сообщение отправлено. Спасибо!';
-    
-    // Опционально можно очистить форму
     form.reset();
   });
 }
