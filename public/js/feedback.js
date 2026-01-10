@@ -1,7 +1,7 @@
 const tg = window.Telegram?.WebApp;
 const form = document.getElementById("feedbackForm");
 const msg = document.getElementById("feedbackMessage");
-
+console.log(1);
 if (!tg) {
   // Если не в Telegram — скрываем форму и показываем телефон
   form.style.display = "none";
