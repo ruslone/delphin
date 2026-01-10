@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <title>Обратная связь</title>
@@ -7,42 +8,32 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="page-wrapper">
-  <div class="container">
-    <h1>Обратная связь ✉️</h1>
-
-    <form id="feedbackForm">
-      <input
-        type="text"
-        placeholder="Ваше имя"
-        
-      >
-
-      <input
-        type="tel"
-        placeholder="Номер телефона"
-        
-      >
-
-      <textarea
-        placeholder="Ваш вопрос"
-        rows="4"
-        required
-      ></textarea>
-
+  <div class="page-wrapper">
+    <div class="container">
+      <h1>Обратная связь ✉️</h1>
+      <div>
+        <form id="feedbackForm">
+          <input type="text" placeholder="Ваше имя">
+      </div>
+      <div> <input type="tel" placeholder="Номер телефона"></div>
+      <div>
+        <textarea placeholder="Ваш вопрос" rows="4" required></textarea>
+      </div>
       <button type="submit" class="link-btn">
         Отправить сообщение
       </button>
-    </form>
-        <!-- Здесь будет сообщение после отправки -->
-        <p id="feedbackMessage" style="display:none; margin-top:16px;"></p>
+      </form>
+      <!-- Здесь будет сообщение после отправки -->
+      <p id="feedbackMessage" style="display:none; margin-top:16px;"></p>
 
-    <a class="link-btn" href="index.html">⬅ Назад</a>
+      <a class="link-btn" href="index.html">⬅ Назад</a>
+    </div>
   </div>
-</div>
 
-<script src="js/feedback.js"></script>
+  <script src="js/feedback.js"></script>
 </body>
+
 </html>

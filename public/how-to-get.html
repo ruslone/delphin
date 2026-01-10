@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <title>Как добраться</title>
@@ -7,40 +8,39 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <h1>Как добраться 🚗</h1>
+  <div class="page-wrapper">
 
-    <p class="address">
-      <strong>База отдыха «Дельфин 93»</strong><br>
-      Республика Крым, г. Евпатория,<br>
-      ул. Симферопольская, 99А<br>
-      <em>Проход под арку отеля «Оазис»</em>
-    </p>
+    <div class="container">
+      <h1>Как добраться 🚗</h1>
 
-    <div class="map-wrapper">
-      <iframe
-        src="https://yandex.ru/map-widget/v1/?ll=33.392000%2C45.197596&mode=poi&poi%5Bpoint%5D=33.391219%2C45.198326&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1268744945&z=17.42"
-        width="100%"
-        height="320"
-        frameborder="0"
-        allowfullscreen="true">
-      </iframe>
+      <p class="address">
+        <strong>База отдыха «Дельфин 93»</strong><br>
+        Республика Крым, г. Евпатория,<br>
+        ул. Симферопольская, 99А<br>
+        <em>Проход под арку отеля «Оазис»</em>
+      </p>
+
+      <div class="map-wrapper">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=33.392000%2C45.197596&mode=poi&poi%5Bpoint%5D=33.391219%2C45.198326&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1268744945&z=17.42"
+          width="100%" height="320" frameborder="0" allowfullscreen="true">
+        </iframe>
+      </div>
+
+      <a class="link-btn"
+        href="https://yandex.ru/maps/?ll=33.392000%2C45.197596&mode=poi&poi%5Bpoint%5D=33.391219%2C45.198326&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1268744945&z=17.42"
+        target="_blank">
+        📍 Открыть в Яндекс Картах
+      </a>
+
+      <a class="link-btn" href="index.html">⬅ Назад</a>
     </div>
-
-    <a
-      class="link-btn"
-      href="https://yandex.ru/maps/?ll=33.392000%2C45.197596&mode=poi&poi%5Bpoint%5D=33.391219%2C45.198326&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1268744945&z=17.42"
-      target="_blank"
-    >
-      📍 Открыть в Яндекс Картах
-    </a>
-
-    <a class="link-btn" href="index.html">⬅ Назад</a>
   </div>
-
   <script>
     Telegram.WebApp.ready();
   </script>
 </body>
+
 </html>
