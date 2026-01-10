@@ -9,40 +9,40 @@ export default async function handler(req, res) {
 
   const update = req.body;
 
+  console.log("UPDATE:", JSON.stringify(update, null, 2));
+
+
+  // /start
   if (update.message?.text === "/start") {
     await bot.sendMessage(
       update.message.chat.id,
-      "Открой Mini App 👇",
-      {
-        reply_markup: {
-          keyboard: [[{
-            text: "Открыть приложение",
-            web_app: {
-              url: "https://delphin93.vercel.app/"
-            }
-          }]],
-        resize_keyboard: true
-        }
-      }
+      "Привет! Открой мини-приложение ниже 👇"
     );
   }
 
-  if (update.message?.web_app_data) {
+  // ✅ ВОТ ОНО — ОБРАБОТКА FEEDBACK
+  if (update.message?.web_app_data?.data) {
     const data = JSON.parse(update.message.web_app_data.data);
-  
+
     if (data.type === "feedback") {
       await bot.sendMessage(
         process.env.ADMIN_CHAT_ID,
-        `📩 Новое сообщение с сайта:
-  
-  👤 Имя: ${data.name}
-  📞 Телефон: ${data.phone}
-  ❓ Вопрос:
-  ${data.message}`
+        `📩 Заявка с Mini App:
+
+👤 Имя: ${data.name}
+📞 Телефон: ${data.phone}
+❓ Вопрос:
+${data.message}`
       );
     }
   }
-  
 
   res.status(200).send("OK");
 }
+
+
+
+
+
+
+
