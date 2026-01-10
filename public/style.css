@@ -50,4 +50,17 @@ body {
     font-size: 15px;
     color: black;
   }
+
+  .address {
+    font-size: 16px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  
+  .map-wrapper {
+    margin-bottom: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
   
