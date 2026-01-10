@@ -1,3 +1,9 @@
+:root {
+  --sea-blue: #0b5ed7;
+  --sea-blue-dark: #094db2;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -43,7 +49,7 @@ h1 {
   text-align: center;
   text-decoration: none;
   border-radius: 10px;
-  background: #000;
+  background: var(--sea-blue);
   color: #fff;
   font-size: 16px;
   font-weight: 500;
@@ -51,9 +57,13 @@ h1 {
 
 /* Эффект нажатия */
 .link-btn:active {
-  opacity: 0.85;
+  background: var(--sea-blue-dark);
+  opacity: 1;
 }
 
+a {
+  color: var(--sea-blue);
+}
   
   .card {
     margin-bottom: 24px;
@@ -93,3 +103,49 @@ h1 {
   }
   
   
+
+  /* Галерея */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Просмотр фото */
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
+.viewer.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+  /* конец галереи */

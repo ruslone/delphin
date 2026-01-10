@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Фотогалерея</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+  <div class="container">
+    <h1>Фотогалерея 📸</h1>
+
+    <div class="gallery">
+      <img src="img/1.jpg" onclick="openPhoto(this.src)">
+      <img src="img/2.jpg" onclick="openPhoto(this.src)">
+      <img src="img/3.jpg" onclick="openPhoto(this.src)">
+      <img src="img/4.jpg" onclick="openPhoto(this.src)">
+      <img src="img/5.jpg" onclick="openPhoto(this.src)">
+      <img src="img/6.jpg" onclick="openPhoto(this.src)">
+    </div>
+
+    <a class="link-btn" href="index.html">⬅ Назад</a>
+  </div>
+</div>
+
+<!-- Полноэкранный просмотр -->
+<div id="viewer" class="viewer" onclick="closePhoto()">
+  <img id="viewerImg">
+</div>
+
+<script>
+  Telegram.WebApp.ready();
+
+  function openPhoto(src) {
+    const viewer = document.getElementById("viewer");
+    const img = document.getElementById("viewerImg");
+    img.src = src;
+    viewer.classList.add("show");
+  }
+
+  function closePhoto() {
+    document.getElementById("viewer").classList.remove("show");
+  }
+</script>
+
+</body>
+</html>
