@@ -15,11 +15,20 @@
     <div class="container">
       <h1>Обратная связь ✉️</h1>
       <div>
+
         <form id="feedbackForm">
+          <div><input type="text" placeholder="Ваше имя"></div>
+          <div> <input type="tel" placeholder="Номер телефона"></div>
+          <div>
+            <textarea placeholder="Ваш вопрос" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="link-btn">
+            Отправить сообщение
+          </button>
             <textarea id="message" placeholder="Ваше сообщение"></textarea>
             <button type="button" id="send">Отправить</button>
         </form>
-        <!-- Здесь будет сообщение после отправки -->
+
         <p id="feedbackMessage" style="display:none; margin-top:16px;"></p>
 
         <a class="link-btn" href="index.html">⬅ Назад</a>
