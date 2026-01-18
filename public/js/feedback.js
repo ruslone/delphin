@@ -1,6 +1,6 @@
 const tg = window.Telegram.WebApp;
 tg.ready();
-
+alert(1);
 document.getElementById("send").onclick = async () => {
   const message = document.getElementById("msg").value;
 
@@ -12,7 +12,7 @@ document.getElementById("send").onclick = async () => {
       initData: tg.initData,
     }),
   });
-
+  alert(message);
   tg.showAlert("Отправлено");
 };
 
