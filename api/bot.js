@@ -1,4 +1,8 @@
 export default async function handler(req, res) {
+  console.log("🔥 HANDLER HIT");
+  console.log("METHOD:", req.method);
+  console.log("HEADERS:", req.headers);
+  console.log("BODY:", req.body);
   if (req.method !== "POST") {
     return res.status(200).send("OK");
   }
