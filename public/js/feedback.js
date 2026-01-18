@@ -1,20 +1,20 @@
-  const tg = window.Telegram.WebApp;
-  tg.ready();
+const tg = window.Telegram.WebApp;
+tg.ready();
 
-  document.getElementById('send').onclick = async () => {
-    const message = document.getElementById('msg').value;
+document.getElementById("send").onclick = async () => {
+  const message = document.getElementById("msg").value;
 
-    await fetch('/api/feedback', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        message,
-        initData: tg.initData
-      })
-    });
+  await fetch("/api/feedback", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message,
+      initData: tg.initData,
+    }),
+  });
 
-    tg.showAlert('Отправлено');
-
+  tg.showAlert("Отправлено");
+};
 
 // import TelegramBot from "node-telegram-bot-api";
 
