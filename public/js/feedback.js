@@ -1,6 +1,6 @@
 const tg = window.Telegram.WebApp;
 tg.ready();
-alert(1);
+
 document.getElementById("send").onclick = async () => {
   const message = document.getElementById("msg").value;
 
