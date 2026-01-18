@@ -2,7 +2,7 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 
 document.getElementById("send").onclick = async () => {
-  const message = document.getElementById("msg").value;
+  const message = document.getElementById("message").value;
 
   await fetch("/api/feedback", {
     method: "POST",
@@ -12,7 +12,6 @@ document.getElementById("send").onclick = async () => {
       initData: tg.initData,
     }),
   });
-  alert(message);
   tg.showAlert("Отправлено");
 };
 
