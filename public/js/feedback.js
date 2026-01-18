@@ -31,7 +31,7 @@ if (!isTelegramMiniApp) {
     };
 
     console.log("SEND DATA:", data);
-
+    alert(1);
     // ⬅️ ВАЖНО: отправка данных
     tg.sendData(JSON.stringify(data));
 
